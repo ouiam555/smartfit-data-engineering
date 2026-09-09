@@ -1,5 +1,0 @@
-_PIPELINES = {
-    "smartfit_scraper.pipelines.KafkaPipeline": 300,
-}
-clear
-cccc
