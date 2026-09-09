@@ -1,0 +1,26 @@
+select
+    location_id,
+    club_name,
+    address_first_line,
+    address_second_line,
+    city_state,
+    latitude,
+    longitude,
+    distance,
+    opened,
+    franchise,
+    sales_available,
+    permalink,
+    picture_url,
+    price_smart,
+    price_black,
+    price_fit,
+    price_black_no_commitment,
+    promotion_id,
+    promotion_name,
+    promotion_title,
+    promotion_kind,
+    scraped_at,
+    source_url
+
+from {{ source('silver', 'clubs') }}

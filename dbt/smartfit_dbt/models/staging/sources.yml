@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: silver
+    database: SMARTFIT_DB
+    schema: SILVER
+
+    tables:
+      - name: clubs
+      - name: activities
+      - name: facilities
+      - name: features
+      - name: club_plans
+      - name: schedules

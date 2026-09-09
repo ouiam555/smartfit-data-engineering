@@ -1,0 +1,128 @@
+version: 2
+
+models:
+
+  - name: dim_club
+    columns:
+      - name: location_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_activity
+    columns:
+      - name: activity_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_feature
+    columns:
+      - name: feature_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_facility
+    columns:
+      - name: facility_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_plan
+    columns:
+      - name: plan_name
+        data_tests:
+          - not_null
+          - unique
+
+  - name: bridge_club_activity
+    columns:
+      - name: location_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_club')
+                field: location_id
+
+      - name: activity_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_activity')
+                field: activity_id
+
+  - name: bridge_club_feature
+    columns:
+      - name: location_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_club')
+                field: location_id
+
+      - name: feature_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_feature')
+                field: feature_id
+
+  - name: bridge_club_facility
+    columns:
+      - name: location_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_club')
+                field: location_id
+
+      - name: facility_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_facility')
+                field: facility_id
+
+  - name: bridge_club_plan
+    columns:
+      - name: location_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_club')
+                field: location_id
+
+      - name: plan_name
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_plan')
+                field: plan_name
+
+  - name: fact_schedule
+    columns:
+      - name: location_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_club')
+                field: location_id
+
+      - name: day_name
+        data_tests:
+          - not_null
+
+      - name: opening_hours
+        data_tests:
+          - not_null
