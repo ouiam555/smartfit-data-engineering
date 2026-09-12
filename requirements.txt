@@ -1,0 +1,12 @@
+Scrapy==2.18.0
+confluent-kafka==2.15.0
+minio==7.2.20
+pyspark
+snowflake-connector-python==4.7.3
+dbt-core==1.12.3
+dbt-snowflake==1.12.0
+python-dotenv==1.2.3
+requests==2.34.2
+pandas==3.0.5
+polars==1.44.1
+pyarrow==23.0.1

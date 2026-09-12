@@ -1,5 +1,6 @@
 # Secrets
 .env
+*.env
 
 # Python
 .venv/
@@ -10,22 +11,20 @@ __pycache__/
 
 # Airflow
 airflow/logs/
-airflow/airflow.db
+airflow/*.db
 
 # dbt
-dbt/**/target/
-dbt/**/logs/
-dbt/**/dbt_packages/
+**/target/
+**/logs/
+**/dbt_packages/
 
 # IDE
 .vscode/
-.idea/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Temporary
+# Temporary files
 *.tmp
 *.log
-*.save
